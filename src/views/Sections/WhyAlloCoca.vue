@@ -1,43 +1,58 @@
 <template>
-  <section class="bg-black text-white py-20 px-4">
-    <div class="max-w-7xl mx-auto space-y-12">
+  <section class="px-4 py-20 text-white bg-black">
+     <div class="absolute z-0 ">
+      <svg
+        width="428"
+        height="349"
+        viewBox="0 0 428 349"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="opacity-40"
+      >
+        <path
+          d="M462.191 174.415L368.982 196.212L415.83 279.962L329.164 236.143L327.669 333.165L265.904 257.94L231.095 348.83L196.287 257.94L134.522 333.165L133.027 236.143L46.3612 279.962L93.2084 196.212L0 174.415L93.2084 152.618L46.3612 68.8687L133.027 112.688L134.522 15.6656L196.287 90.8903L231.095 0L265.904 90.8903L327.669 15.6656L329.164 112.688L415.83 68.8687L368.982 152.618L462.191 174.415Z"
+          fill="#F11123"
+        />
+      </svg>
+    </div>
+    <div class="relative z-10 mx-auto space-y-12 max-w-7xl">
 
       <!-- Titre -->
-      <div class="text-center space-y-4">
-        <h2 class="text-3xl md:text-4xl font-bold">Pourquoi choisir AlloCoca ?</h2>
+      <div class="space-y-4 text-center">
+        <h2 class="text-3xl font-bold md:text-4xl">Pourquoi choisir AlloCoca ?</h2>
         <p class="text-gray-300">La solution la plus simple pour tes boissons</p>
       </div>
 
       <!-- Avantages -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
         <div
           v-for="(feature, index) in features"
           :key="index"
-          class="bg-white text-black rounded-xl p-6 flex items-start space-x-4"
+          class="flex items-start p-6 space-x-4 text-black bg-white rounded-xl"
         >
-          <div class="text-2xl mt-1">
+          <div class="mt-1 text-2xl">
             <component :is="feature.icon" class="w-6 h-6 text-black" />
           </div>
           <div>
-            <h3 class="font-semibold mb-1">{{ feature.title }}</h3>
-            <p class="text-gray-600 text-sm">{{ feature.description }}</p>
+            <h3 class="mb-1 font-semibold">{{ feature.title }}</h3>
+            <p class="text-sm text-gray-600">{{ feature.description }}</p>
           </div>
         </div>
       </div>
 
       <!-- Call to Action -->
-      <div class="bg-white text-center rounded-xl p-8">
-        <h3 class="text-xl md:text-2xl font-bold text-black mb-2">
+      <div class="p-8 text-center bg-white rounded-xl">
+        <h3 class="mb-2 text-xl font-bold text-black md:text-2xl">
           Prêt à passer ta première commande ?
         </h3>
-        <p class="text-gray-600 mb-6">
+        <p class="mb-6 text-gray-600">
           Rejoins des milliers de clients satisfaits à Abidjan
         </p>
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-          <button class="bg-red-500 hover:bg-red-600 text-white px-6 py-2 rounded-full transition">
+        <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <button class="px-6 py-2 text-white transition bg-red-500 rounded-full hover:bg-red-600">
             Commander maintenant
           </button>
-          <button class="border border-black text-black px-6 py-2 rounded-full hover:bg-gray-100 transition">
+          <button class="px-6 py-2 text-black transition border border-black rounded-full hover:bg-gray-100">
             Contacter via Whatsapp
           </button>
         </div>
@@ -48,7 +63,10 @@
 
 <script setup lang="ts">
 import { Truck, ShieldCheck, RefreshCw, MessageCircle } from 'lucide-vue-next'
-
+// import IconTruck from '../../assets/bus.svg'
+// import IconShieldCheck from '../../assets/shield.svg'
+// import IconRefreshCw from '../../assets/rotate-ccw.svg'
+// import IconMessageCircle from '../../assets/message-circle.svg'
 interface Feature {
   title: string
   description: string

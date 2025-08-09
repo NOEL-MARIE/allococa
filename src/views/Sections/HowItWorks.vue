@@ -1,14 +1,14 @@
 <template>
-  <section class="py-16 max-w-7xl mx-auto bg-white text-center">
+  <section class="py-16 mx-auto text-center justify-center flex flex-col bg-white max-w-7xl h-[600px]">
     <!-- Titre -->
-    <h2 class="text-3xl md:text-4xl font-bold mb-2 text-black">Comment ça marche ?</h2>
-    <p class="text-gray-600 mb-12">Trois étapes simples pour recevoir tes boissons</p>
+    <h2 class="mb-2 text-3xl font-bold text-black md:text-4xl">Comment ça marche ?</h2>
+    <p class="mb-12 text-gray-600">Trois étapes simples pour recevoir tes boissons</p>
 
     <!-- Étapes -->
-    <div class="flex flex-col lg:flex-row items-center justify-center gap-8 px-4">
+    <div class="flex flex-col items-center justify-center gap-8 px-4 lg:flex-row">
       <!-- Étape 1 -->
       <div class="bg-[#F6F6F6] rounded-lg p-6 w-[400px] h-[200px] text-center shadow-sm">
-        <div class="text-red-500 text-3xl flex justify-center mb-4">
+        <div class="flex justify-center mb-4 text-3xl text-red-500">
           <svg
             width="32"
             height="32"
@@ -37,8 +37,8 @@
             </defs>
           </svg>
         </div>
-        <h3 class="font-semibold text-lg mb-2 text-black">1. Choisis tes boissons</h3>
-        <p class="text-gray-600 text-sm">
+        <h3 class="mb-2 text-lg font-semibold text-black">1. Choisis tes boissons</h3>
+        <p class="text-sm text-gray-600">
           Choisis tes boissons en ligne ou par WhatsApp en quelques clics
         </p>
       </div>
@@ -58,7 +58,7 @@
 
       <!-- Étape 2 -->
       <div class="bg-[#F6F6F6] rounded-lg p-6  w-[400px] h-[200px] text-center shadow-sm">
-        <div class="text-red-500 text-3xl flex justify-center mb-4">
+        <div class="flex justify-center mb-4 text-3xl text-red-500">
           <svg
             width="32"
             height="32"
@@ -76,8 +76,8 @@
           </svg>
 
         </div>
-        <h3 class="font-semibold text-lg mb-2 text-black">2. Je reçois sous 24h</h3>
-        <p class="text-gray-600 text-sm">Livraison gratuite à ton domicile partout à Abidjan</p>
+        <h3 class="mb-2 text-lg font-semibold text-black">2. Je reçois sous 24h</h3>
+        <p class="text-sm text-gray-600">Livraison gratuite à ton domicile partout à Abidjan</p>
       </div>
 
       <!-- Flèche 2 -->
@@ -95,7 +95,7 @@
 
       <!-- Étape 3 -->
       <div class="bg-[#F6F6F6] rounded-lg p-6 w-[400px] h-[200px] text-center shadow-sm">
-        <div class="text-red-500 text-3xl flex justify-center mb-4">
+        <div class="flex justify-center mb-4 text-3xl text-red-500">
           <svg
             width="32"
             height="32"
@@ -112,8 +112,8 @@
             />
           </svg>
         </div>
-        <h3 class="font-semibold text-lg mb-2 text-black">3. Je recharge mon casier</h3>
-        <p class="text-gray-600 text-sm">Garde ton casier et recommande facilement quand tu veux</p>
+        <h3 class="mb-2 text-lg font-semibold text-black">3. Je recharge mon casier</h3>
+        <p class="text-sm text-gray-600">Garde ton casier et recommande facilement quand tu veux</p>
       </div>
     </div>
   </section>

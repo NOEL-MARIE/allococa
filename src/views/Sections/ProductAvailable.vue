@@ -3,6 +3,10 @@ import cocaImage from '../../assets/coca.png'
 import spriteImage from '../../assets/sprite.png'
 import fantaImage from '../../assets/fanta.png'
 import schweppesImage from '../../assets/schweppes.png'
+import celesteImage from '../../assets/Image_Celeste.png'
+import celestegrandImage from '../../assets/Image_celeste_grande.png'
+import celeste5lImage from '../../assets/image_celeste_5l.png'
+import christalineImage from '../../assets/Image_Cristaline.png'
 import { ref } from 'vue'
 
 type Product = {
@@ -50,7 +54,37 @@ const productsGazeuses: Product[] = [
   },
 ]
 
-const productsEaux: Product[] = [...productsGazeuses] // À adapter plus tard
+const EauxMinerales: Product[] = [
+  {
+    id: 1,
+    name: 'Eau Minérale Cristaline 50cl',
+    image: celesteImage,
+    price: 200,
+    isNew: true,
+  },
+  {
+    id: 2,
+    name: 'Eau Minérale Evian 1L',
+    image: celestegrandImage,
+    price: 300,
+    isNew: true,
+  },
+  {
+    id: 3,
+    name: 'Eau Minérale Volvic 1,5L',
+    image: celeste5lImage,
+    price: 350,
+    isNew: false,
+  },
+  {
+    id: 4,
+    name: 'Eau Minérale Perrier 75cl',
+    image: christalineImage,
+    price: 400,
+    isNew: false,
+  },
+]
+ // À adapter plus tard
 
 const casier = ref<Product[]>([])
 
@@ -59,27 +93,27 @@ function addToCasier(product: Product) {
 }
 
 function getProducts() {
-  return activeTab.value === 'gazeuse' ? productsGazeuses : productsEaux
+  return activeTab.value === 'gazeuse' ? productsGazeuses : EauxMinerales
 }
 </script>
 
 <template>
-  <section class="bg-white w-full py-16 px-4">
-    <div class="max-w-7xl mx-auto flex flex-col h-full">
+  <section class="w-full px-4 py-16 bg-white">
+    <div class="flex flex-col h-full mx-auto max-w-7xl">
 
       <!-- Header + Description -->
-      <div class="flex flex-col md:flex-row justify-between items-start pt-12">
-        <h1 class="text-2xl md:text-5xl text-black font-bold mb-6 md:mb-0 w-full md:w-2/5">
+      <div class="flex flex-col items-start justify-between pt-12 md:flex-row">
+        <h1 class="w-full mb-6 text-2xl font-bold text-black md:text-5xl md:mb-0 md:w-2/5">
           Nos produits disponibles
         </h1>
-        <div class="w-full md:w-2/5 text-gray-700 md:ml-auto text-base md:text-2xl">
+        <div class="w-full text-base text-gray-700 md:w-2/5 md:ml-auto md:text-2xl">
           <span>
             Compose ton casier comme tu veux ou choisis directement <br />
             un pack prêt à livrer. Des bouteilles fraîches, des prix fixes, <br />
             et la livraison offerte chez toi en 24h&nbsp;!
           </span>
           <div class="mt-2 flex gap-2.5 items-center">
-            <a href="#" class="underline font-semibold text-black hover:text-gray-800 transition">
+            <a href="#" class="font-semibold text-black underline transition hover:text-gray-800">
               Configurer mon casier
             </a>
             <svg
@@ -102,7 +136,7 @@ function getProducts() {
       </div>
 
       <!-- Onglets -->
-      <div class="flex space-x-10 mt-12 border-b border-gray-200">
+      <div class="flex mt-12 space-x-10 border-b border-gray-200">
         <button
           v-for="tab in tabs"
           :key="tab.key"
@@ -117,24 +151,24 @@ function getProducts() {
       </div>
 
       <!-- Grille produits -->
-      <div class="mt-8 flex-1">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="flex-1 mt-8">
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           <div
             v-for="product in getProducts()"
             :key="product.id"
-            class="bg-gray-50 rounded-lg shadow-sm p-6 flex flex-col relative"
+            class="relative flex flex-col p-6 rounded-lg shadow-sm bg-gray-50"
           >
             <span
               v-if="product.isNew"
-              class="absolute top-4 left-4 bg-red-500 text-white text-xs px-3 py-1 rounded-full font-semibold"
+              class="absolute px-3 py-1 text-xs font-semibold text-white bg-red-500 rounded-full top-4 left-4"
             >
               Nouveauté
             </span>
-            <img :src="product.image" :alt="product.name" class="h-72 mb-5 object-contain" />
-            <div class="text-left w-full">
-              <div class="text-gray-500 text-xl mb-1">Casier de 24 bouteilles</div>
-              <div class="font-bold mb-1 text-black text-left">{{ product.name }}</div>
-              <span class="text-xl text-gray-600 mb-1 block">30cl | {{ product.price }} FCFA</span>
+            <img :src="product.image" :alt="product.name" class="object-contain mb-5 h-72" />
+            <div class="w-full text-left">
+              <div class="mb-1 text-xl text-gray-500">Casier de 24 bouteilles</div>
+              <div class="mb-1 font-bold text-left text-black">{{ product.name }}</div>
+              <span class="block mb-1 text-xl text-gray-600">30cl | {{ product.price }} FCFA</span>
             </div>
             <button
               class="mt-4 w-[103px] group flex items-center text-black justify-center py-2 px-4 bg-white border border-black rounded-full font-semibold hover:bg-black hover:text-white transition"
@@ -150,7 +184,7 @@ function getProducts() {
                 >
                   <path
                     d="M12.5001 9.15755L11.6667 16.6576M15.8334 9.15755L12.5001 3.32422M1.66675 9.15755H18.3334M2.91675 9.15755L4.25008 15.3242C4.328 15.7063 4.53745 16.049 4.84199 16.2927C5.14652 16.5363 5.52684 16.6654 5.91675 16.6576H14.0834C14.4733 16.6654 14.8536 16.5363 15.1582 16.2927C15.4627 16.049 15.6722 15.7063 15.7501 15.3242L17.1667 9.15755M3.75008 12.9076H16.2501M4.16675 9.15755L7.50008 3.32422M7.50008 9.15755L8.33342 16.6576"
-                    class="stroke-black group-hover:stroke-white transition duration-300"
+                    class="transition duration-300 stroke-black group-hover:stroke-white"
                     stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
@@ -160,7 +194,7 @@ function getProducts() {
               Casier
             </button>
             <button
-              class="absolute bottom-6 right-6 rounded-full border border-black p-2 hover:bg-gray-200 hover:cursor-pointer transition"
+              class="absolute p-2 transition border border-black rounded-full bottom-6 right-6 hover:bg-gray-200 hover:cursor-pointer"
               aria-label="Voir plus"
             >
               <svg
