@@ -1,23 +1,24 @@
 <template>
   <header
-    class="bg-[#7C6E65] text-white px-6 sm:px-10 md:px-16 py-4 flex items-center justify-between"
+    class="flex items-center justify-between w-full px-6 py-4 text-white bg-[#F11123] md:bg-transparent md:fixed md:top-0 md:left-0 md:z-50 sm:px-10 md:px-16"
   >
     <!-- Logo -->
     <div class="text-xl font-extrabold cursor-pointer select-none">
-      <img src="../assets/Logo Allo Cola.svg" alt="" />
+      <img src="../assets/Logo Allo Cola.svg" alt="Logo" class="h-8 md:h-10" />
     </div>
 
-    <!-- Menu -->
-    <nav class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide">
-      <a href="#" class="hover:underline text-xl">Comment ça marche</a>
-      <a href="#" class="hover:underline text-xl">Commander</a>
-      <a href="#" class="hover:underline text-xl">Contactez-nous</a>
+    <!-- Menu desktop -->
+    <nav class="hidden space-x-8 text-sm font-semibold tracking-wide md:flex">
+      <a href="#" class="text-xl hover:underline">Comment ça marche</a>
+      <a href="#" class="text-xl hover:underline">Commander</a>
+      <a href="#" class="text-xl hover:underline">Contactez-nous</a>
     </nav>
 
-    <!-- Cart Icon -->
+    <!-- Icone burger mobile -->
     <button
-      aria-label="Panier"
-      class="p-2 rounded-full border cursor-pointer border-white hover:bg-white hover:text-[#7C6E65] transition-colors"
+      @click="isMenuOpen = !isMenuOpen"
+      aria-label="Menu"
+      class="md:hidden p-2 rounded border border-white hover:bg-white hover:text-[#7C6E65] transition-colors"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +27,28 @@
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
-        class="w-6 h-6 hover:cursour-pointer"
+        class="w-6 h-6"
+        viewBox="0 0 24 24"
+      >
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+
+    <!-- Icone panier -->
+    <button
+      aria-label="Panier"
+      class="p-2 rounded-full border cursor-pointer border-white hover:bg-white hover:text-[#7C6E65] transition-colors ml-4"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="w-6 h-6"
         viewBox="0 0 24 24"
       >
         <circle cx="9" cy="21" r="1"></circle>
@@ -35,8 +57,24 @@
       </svg>
     </button>
   </header>
+
+  <!-- Menu mobile déroulant -->
+  <nav
+    v-if="isMenuOpen"
+    class="fixed left-0 right-0 z-40 flex flex-col px-6 py-6 space-y-4 text-white bg-black top-16 bg-opacity-70 backdrop-blur-md md:hidden"
+  >
+    <a href="#" class="text-lg hover:underline">Comment ça marche</a>
+    <a href="#" class="text-lg hover:underline">Commander</a>
+    <a href="#" class="text-lg hover:underline">Contactez-nous</a>
+  </nav>
 </template>
 
 <script setup lang="ts">
-// Pas de script nécessaire, tout est statique
+import { ref } from 'vue'
+
+const isMenuOpen = ref(false)
 </script>
+
+<style scoped>
+/* Rien de spécial ici, tout est géré via Tailwind */
+</style>

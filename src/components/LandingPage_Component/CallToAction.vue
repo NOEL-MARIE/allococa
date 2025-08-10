@@ -14,28 +14,28 @@ function findOrder() {
 
 <template>
   <section
-    class="w-full h-[800px]  bg-black flex items-center justify-center px-4 py-12 md:py-24"
+    class="w-full min-h-[700px] md:min-h-[800px] bg-black flex items-center justify-center px-4 py-12 md:py-24"
   >
     <div
-      class="w-full max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
+      class="grid items-center w-full grid-cols-1 gap-12 mx-auto max-w-7xl md:grid-cols-2"
     >
       <!-- Texte gauche -->
-      <div class="text-white max-w-lg mx-auto md:mx-0">
-        <h2 class="text-3xl md:text-6xl font-bold mb-9 ">
+      <div class="max-w-lg mx-auto text-white md:mx-0">
+        <h2 class="mb-8 text-4xl font-bold leading-snug md:text-6xl md:mb-9 md:leading-tight">
           Pas besoin de<br />créer un compte !
         </h2>
-        <p class="text-gray-300 mb-12 text-sm font-light md:text-2xl">
+        <p class="mb-10 text-base font-light leading-relaxed text-gray-300 md:mb-12 md:text-2xl md:leading-relaxed">
           Pas envie de perdre du temps ? Commence ta commande en 1 clic, on prendra tes infos plus tard.
         </p>
 
-        <div class="flex flex-col space-y-9 text-sm md:text-base">
+        <div class="flex flex-col space-y-8 text-base md:text-xl">
           <button
             @click="startOrderWithoutAccount"
-            class="inline-flex items-center text-xl font-semibold underline text-white hover:text-gray-300 transition focus:outline-none"
+            class="inline-flex items-center font-semibold text-white underline transition hover:text-gray-300 focus:outline-none"
           >
             Commence sans Compte
             <svg
-              class="ml-2 w-4 h-4 stroke-current"
+              class="w-5 h-5 ml-2 stroke-current"
               fill="none"
               stroke-width="2"
               stroke-linecap="round"
@@ -50,11 +50,11 @@ function findOrder() {
 
           <button
             @click="findOrder"
-            class="inline-flex items-center text-xl font-semibold underline text-white hover:text-gray-300 transition focus:outline-none"
+            class="inline-flex items-center font-semibold text-white underline transition hover:text-gray-300 focus:outline-none"
           >
             Retrouvez une commande
             <svg
-              class="ml-2 w-4 h-4 stroke-current"
+              class="w-5 h-5 ml-2 stroke-current"
               fill="none"
               stroke-width="2"
               stroke-linecap="round"
@@ -74,10 +74,15 @@ function findOrder() {
         <img
           :src="Cta_Image"
           alt="Personnes partageant un repas"
-          class="rounded-lg shadow-lg object-cover w-full h-full max-h-[800px]"
+          class="rounded-lg shadow-lg object-cover w-full h-auto max-h-[600px] md:max-h-[800px]"
           loading="lazy"
         />
       </div>
     </div>
   </section>
 </template>
+
+<style scoped>
+/* Si besoin, vous pouvez ajouter ici des styles spécifiques */
+/* Mais la plupart des styles sont gérés via Tailwind */
+</style>

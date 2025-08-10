@@ -84,7 +84,6 @@ const EauxMinerales: Product[] = [
     isNew: false,
   },
 ]
- // À adapter plus tard
 
 const casier = ref<Product[]>([])
 
@@ -136,13 +135,13 @@ function getProducts() {
       </div>
 
       <!-- Onglets -->
-      <div class="flex mt-12 space-x-10 border-b border-gray-200">
+      <div class="flex mt-12 space-x-6 overflow-x-auto border-b border-gray-200 md:space-x-10 no-scrollbar whitespace-nowrap">
         <button
           v-for="tab in tabs"
           :key="tab.key"
           @click="activeTab = tab.key"
           :class="[
-            'pb-2 text-lg font-medium duration-200 outline-none',
+            'pb-2 text-lg font-medium duration-200 outline-none whitespace-nowrap',
             activeTab === tab.key ? 'border-b-2 border-black text-black' : 'text-gray-500',
           ]"
         >
@@ -152,7 +151,7 @@ function getProducts() {
 
       <!-- Grille produits -->
       <div class="flex-1 mt-8">
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           <div
             v-for="product in getProducts()"
             :key="product.id"
@@ -164,14 +163,14 @@ function getProducts() {
             >
               Nouveauté
             </span>
-            <img :src="product.image" :alt="product.name" class="object-contain mb-5 h-72" />
+            <img :src="product.image" :alt="product.name" class="object-contain h-48 mb-5 sm:h-72" />
             <div class="w-full text-left">
               <div class="mb-1 text-xl text-gray-500">Casier de 24 bouteilles</div>
               <div class="mb-1 font-bold text-left text-black">{{ product.name }}</div>
               <span class="block mb-1 text-xl text-gray-600">30cl | {{ product.price }} FCFA</span>
             </div>
             <button
-              class="mt-4 w-[103px] group flex items-center text-black justify-center py-2 px-4 bg-white border border-black rounded-full font-semibold hover:bg-black hover:text-white transition"
+              class="mt-4 w-auto min-w-[103px] group flex items-center text-black justify-center py-2 px-4 bg-white border border-black rounded-full font-semibold hover:bg-black hover:text-white transition"
               @click="addToCasier(product)"
             >
               <span class="mr-2">
@@ -220,3 +219,15 @@ function getProducts() {
     </div>
   </section>
 </template>
+
+<style scoped>
+/* Optionnel: cacher scrollbar sur onglets (personnalisez dans styles globaux si besoin) */
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE et Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+</style>

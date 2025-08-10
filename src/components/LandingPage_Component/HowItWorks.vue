@@ -1,14 +1,18 @@
 <template>
-  <section class="py-16 mx-auto text-center justify-center flex flex-col bg-white max-w-7xl h-[600px]">
+  <section class="py-16 mx-auto text-center flex flex-col items-center bg-white max-w-7xl min-h-[600px] px-4 lg:px-0">
     <!-- Titre -->
-    <h2 class="mb-2 text-3xl font-bold text-black md:text-4xl">Comment ça marche ?</h2>
-    <p class="mb-12 text-gray-600">Trois étapes simples pour recevoir tes boissons</p>
+    <h2 class="mb-2 text-3xl font-bold text-black md:text-4xl">
+      Comment ça marche ?
+    </h2>
+    <p class="max-w-xl mb-12 text-base text-gray-600 md:text-lg">
+      Trois étapes simples pour recevoir tes boissons
+    </p>
 
     <!-- Étapes -->
-    <div class="flex flex-col items-center justify-center gap-8 px-4 lg:flex-row">
+    <div class="flex flex-col items-center justify-center gap-8 lg:flex-row lg:gap-12">
       <!-- Étape 1 -->
-      <div class="bg-[#F6F6F6] rounded-lg p-6 w-[400px] h-[200px] text-center shadow-sm">
-        <div class="flex justify-center mb-4 text-3xl text-red-500">
+      <div class="bg-[#F6F6F6] rounded-lg p-6 w-full max-w-md h-[200px] text-center shadow-sm flex flex-col justify-center">
+        <div class="flex justify-center mb-4 text-4xl text-red-500">
           <svg
             width="32"
             height="32"
@@ -44,21 +48,17 @@
       </div>
 
       <!-- Flèche 1 -->
-      <div class="hidden lg:block">
-        <svg
-          width="52"
-          height="22"
-          viewBox="0 0 52 22"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <!-- Ton SVG flèche rouge ici -->
-        </svg>
+      <div class="items-center hidden lg:flex">
+<svg width="52" height="22" viewBox="0 0 52 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M28.8887 0.426954C28.0929 1.18816 28.1621 1.84557 29.0963 2.50298C29.5115 2.81438 33.4214 4.19839 37.781 5.61701C42.1752 7.07022 46.0851 8.45424 46.5349 8.76564C47.3653 9.28465 47.3653 9.31925 46.7425 10.2535C46.3965 10.8071 43.9745 12.9869 41.3448 15.1321C38.5076 17.4503 36.5354 19.3187 36.397 19.8032C36.0164 21.291 36.3624 21.8792 37.6426 21.983C38.646 22.0522 39.4764 21.7062 41.9676 20.1492C46.0851 17.5541 49.5451 14.6823 50.8945 12.7447C51.8287 11.3953 52.0017 10.8417 52.0017 9.18084C52.0017 7.41623 51.8979 7.10482 50.8253 5.99761C49.0607 4.16379 47.3999 3.54099 39.5802 1.81097C30.3073 -0.230453 29.6153 -0.334253 28.8887 0.426954Z" fill="#F11123"/>
+<path d="M35.7395 8.45428C29.2346 8.73109 21.6572 9.38849 17.0899 10.1497C4.28778 12.2257 1.03535 13.0215 0.308743 14.1633C0.0665401 14.5439 -0.0718613 14.9245 0.0319397 14.9937C0.343343 15.3052 3.56118 15.7204 4.73759 15.6166C5.42959 15.5128 11.9691 14.8553 19.3043 14.0941C34.8399 12.4679 37.0197 12.1565 38.7843 11.2569C39.7877 10.7725 40.0645 10.4265 39.9953 9.8729C39.8569 8.86949 38.2999 8.35048 35.7395 8.45428Z" fill="#F11123"/>
+</svg>
+
       </div>
 
       <!-- Étape 2 -->
-      <div class="bg-[#F6F6F6] rounded-lg p-6  w-[400px] h-[200px] text-center shadow-sm">
-        <div class="flex justify-center mb-4 text-3xl text-red-500">
+      <div class="bg-[#F6F6F6] rounded-lg p-6 w-full max-w-md h-[200px] text-center shadow-sm flex flex-col justify-center">
+        <div class="flex justify-center mb-4 text-4xl text-red-500">
           <svg
             width="32"
             height="32"
@@ -74,28 +74,25 @@
               stroke-linejoin="round"
             />
           </svg>
-
         </div>
         <h3 class="mb-2 text-lg font-semibold text-black">2. Je reçois sous 24h</h3>
-        <p class="text-sm text-gray-600">Livraison gratuite à ton domicile partout à Abidjan</p>
+        <p class="text-sm text-gray-600">
+          Livraison gratuite à ton domicile partout à Abidjan
+        </p>
       </div>
 
       <!-- Flèche 2 -->
-      <div class="hidden lg:block">
-        <svg
-          width="52"
-          height="22"
-          viewBox="0 0 52 22"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <!-- Ton SVG flèche rouge ici -->
-        </svg>
+      <div class="items-center hidden lg:flex">
+<svg width="52" height="22" viewBox="0 0 52 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M28.8887 0.426954C28.0929 1.18816 28.1621 1.84557 29.0963 2.50298C29.5115 2.81438 33.4214 4.19839 37.781 5.61701C42.1752 7.07022 46.0851 8.45424 46.5349 8.76564C47.3653 9.28465 47.3653 9.31925 46.7425 10.2535C46.3965 10.8071 43.9745 12.9869 41.3448 15.1321C38.5076 17.4503 36.5354 19.3187 36.397 19.8032C36.0164 21.291 36.3624 21.8792 37.6426 21.983C38.646 22.0522 39.4764 21.7062 41.9676 20.1492C46.0851 17.5541 49.5451 14.6823 50.8945 12.7447C51.8287 11.3953 52.0017 10.8417 52.0017 9.18084C52.0017 7.41623 51.8979 7.10482 50.8253 5.99761C49.0607 4.16379 47.3999 3.54099 39.5802 1.81097C30.3073 -0.230453 29.6153 -0.334253 28.8887 0.426954Z" fill="#F11123"/>
+<path d="M35.7395 8.45428C29.2346 8.73109 21.6572 9.38849 17.0899 10.1497C4.28778 12.2257 1.03535 13.0215 0.308743 14.1633C0.0665401 14.5439 -0.0718613 14.9245 0.0319397 14.9937C0.343343 15.3052 3.56118 15.7204 4.73759 15.6166C5.42959 15.5128 11.9691 14.8553 19.3043 14.0941C34.8399 12.4679 37.0197 12.1565 38.7843 11.2569C39.7877 10.7725 40.0645 10.4265 39.9953 9.8729C39.8569 8.86949 38.2999 8.35048 35.7395 8.45428Z" fill="#F11123"/>
+</svg>
+
       </div>
 
       <!-- Étape 3 -->
-      <div class="bg-[#F6F6F6] rounded-lg p-6 w-[400px] h-[200px] text-center shadow-sm">
-        <div class="flex justify-center mb-4 text-3xl text-red-500">
+      <div class="bg-[#F6F6F6] rounded-lg p-6 w-full max-w-md h-[200px] text-center shadow-sm flex flex-col justify-center">
+        <div class="flex justify-center mb-4 text-4xl text-red-500">
           <svg
             width="32"
             height="32"
@@ -113,7 +110,9 @@
           </svg>
         </div>
         <h3 class="mb-2 text-lg font-semibold text-black">3. Je recharge mon casier</h3>
-        <p class="text-sm text-gray-600">Garde ton casier et recommande facilement quand tu veux</p>
+        <p class="text-sm text-gray-600">
+          Garde ton casier et recommande facilement quand tu veux
+        </p>
       </div>
     </div>
   </section>
